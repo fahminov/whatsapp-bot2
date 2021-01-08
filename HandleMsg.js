@@ -153,7 +153,7 @@ module.exports = HandleMsg = async (aruga, message) => {
         const isQuotedVideo = quotedMsg && quotedMsg.type === 'video'
 		
         // [IDENTIFY]
-        const ownerNumber = "62895334950905@c.us"
+        const ownerNumber = "6281511247547@c.us"
         const isOwnerBot = ownerNumber.includes(pengirim)
         const isOwner = ownerNumber.includes(pengirim)
         const isOwnerB = ownerNumber.includes(pengirim)
@@ -2363,7 +2363,7 @@ _Desc di update oleh : @${chat.groupMetadata.descOwner.replace('@c.us','')} pada
 
                     break
                     case 'grupbot':
-                        const ch = `https://chat.whatsapp.com/Lt96VeJbmMHFeB1QDDGtPM\n\nSkuy join grup Bot niscaya mendapatkan Doi`
+                        const ch = `https://chat.whatsapp.com/KiNhPRdrYVY0KWKkSqiRiJ\n\nSkuy join grup niscaya mendapatkan Doi`
                         await aruga.sendText(from, ch, id)
                         break
                     case 'mtk':
