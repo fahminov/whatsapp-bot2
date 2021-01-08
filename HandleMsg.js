@@ -153,7 +153,7 @@ module.exports = HandleMsg = async (aruga, message) => {
         const isQuotedVideo = quotedMsg && quotedMsg.type === 'video'
 		
         // [IDENTIFY]
-        const ownerNumber = "62895334950905@c.us"
+        const ownerNumber = "6281511247547@c.us"
         const isOwnerBot = ownerNumber.includes(pengirim)
         const isOwner = ownerNumber.includes(pengirim)
         const isOwnerB = ownerNumber.includes(pengirim)
@@ -309,6 +309,9 @@ module.exports = HandleMsg = async (aruga, message) => {
             '100 tahun lagi',
             'gatau',
             '2030'
+	    'besok'
+	    'lusa'	
+		
             ]
 
         const rate = [
@@ -574,7 +577,7 @@ module.exports = HandleMsg = async (aruga, message) => {
            }
            break
         case 'ownerbot':
-            await aruga.sendContact(from, ownerNumber)
+            await aruga.sendContact(from, "621511247547")
             .then(() => aruga.sendText(from, 'Gausah banyak tanya, ini bukan StackOverFlow!'))
             break
             case 'maps':
@@ -585,7 +588,7 @@ module.exports = HandleMsg = async (aruga, message) => {
             })
             break
             case 'bokep2':
-                if (!isGroupAdmins) return aruga.reply(from, 'Fitur ini hanya bisa digunakan oleh Owner Bot, karena takut penyalahgunaan', id)
+                if (!isGroupAdmins) return aruga.reply(from, 'Fitur ini hanya bisa digunakan oleh Owner Bot, karena takut penyalahgunaan jangan pada sangean', id)
 			    rugaapi.bokep2()
 			    .then(async (res) => {
 				await aruga.reply(from, `${res}`, id)
@@ -867,7 +870,7 @@ module.exports = HandleMsg = async (aruga, message) => {
             case 'bokep': // MFARELS
             case 'randombokep': // MFARELS
             case 'bkp': // MFARELS
-                if (!isGroupAdmins) return aruga.reply(from, 'Perintah ini hanya bisa di gunakan oleh Admin Grup,karena takut penyalahgunaan', id) // MFARELS
+                if (!isGroupAdmins) return aruga.reply(from, 'Perintah ini hanya bisa di gunakan oleh Admin Grup,karena takut penyalahgunaan jangan pada sangean', id) // MFARELS
                 const mskkntl = fs.readFileSync('./lib/18+.json') // MFARELS
                 const kntlnya = JSON.parse(mskkntl) // MFARELS
                 const rindBkp = Math.floor(Math.random() * kntlnya.length) // MFARELS
@@ -2363,7 +2366,7 @@ _Desc di update oleh : @${chat.groupMetadata.descOwner.replace('@c.us','')} pada
 
                     break
                     case 'grupbot':
-                        const ch = `https://chat.whatsapp.com/Lt96VeJbmMHFeB1QDDGtPM\n\nSkuy join grup Bot niscaya mendapatkan Doi`
+                        const ch = `https://chat.whatsapp.com/KiNhPRdrYVY0KWKkSqiRiJ\n\nSkuy join grup owner nya niscaya dapet doi`
                         await aruga.sendText(from, ch, id)
                         break
                     case 'mtk':
@@ -2664,7 +2667,7 @@ _Desc di update oleh : @${chat.groupMetadata.descOwner.replace('@c.us','')} pada
                     if(isKasar){
                         const denda = db.get('group').filter({id: groupId}).map('members['+isIn+']').find({ id: pengirim }).update('denda', n => n + 5000).write()
                         if(denda){
-                            await aruga.reply(from, "Jangan badword bodoh\nDenda +5.000\nTotal : Rp"+formatin(denda.denda), id)
+                            await aruga.reply(from, "Jangan badword bodoh mau di kick? jangan caper\nDenda +5.000\nTotal : Rp"+formatin(denda.denda), id)
                         }
                     }
                 } else {
@@ -2679,7 +2682,7 @@ _Desc di update oleh : @${chat.groupMetadata.descOwner.replace('@c.us','')} pada
                         const cekuser = db.get('group').filter({id: groupId}).map('members').value()[0]
                         if(isKasar){
                             cekuser.push({id: pengirim, denda: 5000})
-                            await aruga.reply(from, "Jangan badword bodoh\nDenda +5.000", id)
+                            await aruga.reply(from, "Jangan badword bodoh mau di kick? jangan caper\nDenda +5.000", id)
                         } else {
                             cekuser.push({id: pengirim, denda: 0})
                         }
@@ -2689,7 +2692,7 @@ _Desc di update oleh : @${chat.groupMetadata.descOwner.replace('@c.us','')} pada
             } else {
                 if(isKasar){
                     db.get('group').push({ id: groupId, members: [{id: pengirim, denda: 5000}] }).write()
-                    await aruga.reply(from, "Jangan badword bodoh\nDenda +5.000\nTotal : Rp5.000", id)
+                    await aruga.reply(from, "Jangan badword bodoh mau di kick? jangan caper\nDenda +5.000\nTotal : Rp5.000", id)
                 } else {
                     db.get('group').push({ id: groupId, members: [{id: pengirim, denda: 0}] }).write()
                 }
